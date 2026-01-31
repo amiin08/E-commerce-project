@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&B Cafe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+     <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to <b>A&B</b> Cafe</h1>
+    </header>
+
+    <main class="container">
+        <!-- Drinks section -->
+        <section class="products">
+            <h2>Drinks</h2>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=400" alt="Coffee">
+                <h3>Coffee</h3>
+                <p class="price">KES 300</p>
+                <button onclick="addToCart('Coffee', 455)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400" alt="Matcha Latte">
+                <h3>Matcha Latte</h3>
+                <p class="price">KES 350</p>
+                <button onclick="addToCart('Matcha Latte', 520)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=400" alt="Strawberry Shake">
+                <h3>Strawberry Shake</h3>
+                <p class="price">KES 250</p>
+                <button onclick="addToCart('Strawberry Shake', 650)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400" alt="Mango Shake">
+                <h3>Mango Shake</h3>
+                <p class="price">KES 200</p>
+                <button onclick="addToCart('Mango Shake', 585)">Add to Cart</button>
+            </div>
+        </section>
+
+        <!-- Cart section -->
+        <section class="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p class="total-section">Total: KES <span id="cart-total">0</span></p>
+            <button id="checkout-btn" class="checkout-btn" onclick="openCheckout()" style="display:none;">Proceed to Checkout</button>
+        </section>
+
+        <!-- Checkout Form -->
+        <div id="checkout-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeCheckout()">&times;</span>
+                <h2>Checkout</h2>
+                <form id="checkout-form" onsubmit="submitCheckout(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Delivery Address:</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">M-Pesa Phone Number:</label>
+                        <input type="tel" id="phone" placeholder="07XX XXX XXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount (KES):</label>
+                        <input type="number" id="amount" readonly>
+                    </div>
+                    <button type="submit" class="submit-btn">Pay with M-Pesa</button>
+                </form>
+            </div>
+        </div>      
+
+    </main>
+    <footer>
+        <p>&copy; 2025 A&B Cafe. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
