@@ -15,4 +15,4 @@ Includes product listings, cart UI, and modern layout.
 -Javascript
 
 ## Live Demo
-https://Mohamed Ali.github.io/E-commerce-project/
+https://amiin08.github.io/E-commerce-project/
